@@ -12,6 +12,13 @@ class ViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        let frame = TSRect(x: 10, y: 10, width: 20, height: 20, unit: .mm).cgrect
+        let square = UIView(frame: frame)
+        square.backgroundColor = UIColor.darkGray
+        view.addSubview(square)
+        
+        
         // Do any additional setup after loading the view, typically from a nib.
     }
 

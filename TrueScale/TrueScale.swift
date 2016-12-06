@@ -13,70 +13,70 @@ public enum TSUnit {
 }
 
 public struct TSRect {
-    var origin:TSPoint
-    var size:TSSize
+    public var origin:TSPoint
+    public var size:TSSize
     
-    init(x:CGFloat, y:CGFloat, width:CGFloat, height:CGFloat, unit:TSUnit = .mm){
+    public init(x:CGFloat, y:CGFloat, width:CGFloat, height:CGFloat, unit:TSUnit = .mm){
         self.origin = TSPoint(x: x, y: y, unit: unit)
         self.size = TSSize(width: width, height: height, unit: unit)
     }
     
-    init(origin:TSPoint, size:TSSize){
+    public init(origin:TSPoint, size:TSSize){
         assert(origin.unit == size.unit, "Cannot use defferent unit between origin & size")
         self.origin = origin
         self.size = size
     }
     
-    var cgrect:CGRect{
+    public var cgrect:CGRect{
         return CGRect(origin: origin.cgpoint, size: size.cgsize)
     }
     
-    var width:CGFloat{
+    public var width:CGFloat{
         return size.width
     }
     
-    var height:CGFloat{
+    public var height:CGFloat{
         return size.height
     }
     
-    var minX:CGFloat{
+    public var minX:CGFloat{
         return origin.x
     }
     
-    var midX:CGFloat{
+    public var midX:CGFloat{
         return (origin.x * 2 + size.width) / 2
     }
     
-    var maxX:CGFloat{
+    public var maxX:CGFloat{
         return origin.x + size.width
     }
     
-    var minY:CGFloat{
+    public var minY:CGFloat{
         return origin.y
     }
     
-    var midY:CGFloat{
+    public var midY:CGFloat{
         return (origin.y * 2 + size.height) / 2
     }
     
-    var maxY:CGFloat{
+    public var maxY:CGFloat{
         return origin.y + size.height
     }
     
 }
 
 public struct TSSize {
-    var width:CGFloat
-    var height:CGFloat
-    var unit:TSUnit
-    var rlScale = TSScale()
+    public var width:CGFloat
+    public var height:CGFloat
+    public let unit:TSUnit
+    public var rlScale = TSScale()
     
     
-    var cgsize:CGSize{
+    public var cgsize:CGSize{
         return CGSize(width: width.toPoint(unit: unit), height: height.toPoint(unit: unit))
     }
     
-    init(width:CGFloat, height:CGFloat, unit:TSUnit = .mm) {
+    public init(width:CGFloat, height:CGFloat, unit:TSUnit = .mm) {
         self.width = width
         self.height = height
         self.unit = unit
@@ -85,16 +85,16 @@ public struct TSSize {
 }
 
 public struct TSPoint {
-    var x:CGFloat
-    var y: CGFloat
-    var unit:TSUnit
+    public var x:CGFloat
+    public var y: CGFloat
+    public let unit:TSUnit
     
     
-    var cgpoint:CGPoint{
+    public var cgpoint:CGPoint{
         return CGPoint(x: x.toPoint(unit: unit), y: y.toPoint(unit: unit))
     }
     
-    init(x:CGFloat, y:CGFloat, unit:TSUnit = .mm){
+    public init(x:CGFloat, y:CGFloat, unit:TSUnit = .mm){
         self.x = x
         self.y = y
         self.unit = unit
@@ -103,10 +103,10 @@ public struct TSPoint {
 
 public struct TSScale {
     
-    private var inchRatio:CGFloat = 0
-    private var iPadMiniPlatforms:[String] = ["iPad2,5","iPad2,6","iPad2,7","iPad4,4","iPad4,5","iPad4,6","iPad4,7","iPad4,8","iPad4,9","iPad5,1","iPad5,2"]
+    var inchRatio:CGFloat = 0
+    var iPadMiniPlatforms:[String] = ["iPad2,5","iPad2,6","iPad2,7","iPad4,4","iPad4,5","iPad4,6","iPad4,7","iPad4,8","iPad4,9","iPad5,1","iPad5,2"]
     
-    init() {
+    public init() {
         let inchDiagonal = displayInch()
         let bounds = UIScreen.main.bounds
         let pointWidth = bounds.width
@@ -116,7 +116,7 @@ public struct TSScale {
         self.inchRatio = pointWidth / inchWidth
     }
     
-    private func displayInch()->CGFloat{
+    func displayInch()->CGFloat{
         let bounds = UIScreen.main.bounds
         let width = bounds.width < bounds.height ? bounds.width : bounds.height
         let height = bounds.height > bounds.width ? bounds.height : bounds.width
@@ -143,7 +143,7 @@ public struct TSScale {
         }
     }
     
-    func toPoint(value:CGFloat, unit:TSUnit = .mm)->CGFloat{
+    public func toPoint(value:CGFloat, unit:TSUnit = .mm)->CGFloat{
         switch unit{
         case .inch:
             return value * inchRatio
@@ -158,23 +158,23 @@ public struct TSScale {
         return inchDiagonal * point / pointDiagonal
     }
     
-    func toMm(inch:CGFloat)->CGFloat{
+    public func toMm(inch:CGFloat)->CGFloat{
         return inch * 25.4
     }
     
-    func toCm(inch:CGFloat)->CGFloat{
+    public func toCm(inch:CGFloat)->CGFloat{
         return inch * 2.54
     }
     
-    func toInch(mm:CGFloat)->CGFloat{
+    public func toInch(mm:CGFloat)->CGFloat{
         return mm / 25.4
     }
     
-    func toInch(cm:CGFloat)->CGFloat{
+    public func toInch(cm:CGFloat)->CGFloat{
         return cm / 2.54
     }
     
-    private func platform() -> String {
+    func platform() -> String {
         var size : Int = 0
         sysctlbyname("hw.machine", nil, &size, nil, 0)
         var machine = [CChar](repeating: 0, count: Int(size))

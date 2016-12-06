@@ -8,12 +8,14 @@
 
 /* Begin PBXBuildFile section */
 		5074047B1DF5B2B000C7E719 /* TrueScale.h in Headers */ = {isa = PBXBuildFile; fileRef = 507404791DF5B2B000C7E719 /* TrueScale.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		509104D61DF69C7100BE44F0 /* TrueScale.swift in Sources */ = {isa = PBXBuildFile; fileRef = 509104D51DF69C7100BE44F0 /* TrueScale.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		507404761DF5B2B000C7E719 /* TrueScale.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = TrueScale.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		507404791DF5B2B000C7E719 /* TrueScale.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TrueScale.h; sourceTree = "<group>"; };
 		5074047A1DF5B2B000C7E719 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		509104D51DF69C7100BE44F0 /* TrueScale.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TrueScale.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -47,6 +49,7 @@
 			isa = PBXGroup;
 			children = (
 				507404791DF5B2B000C7E719 /* TrueScale.h */,
+				509104D51DF69C7100BE44F0 /* TrueScale.swift */,
 				5074047A1DF5B2B000C7E719 /* Info.plist */,
 			);
 			path = TrueScale;
@@ -96,6 +99,7 @@
 					507404751DF5B2B000C7E719 = {
 						CreatedOnToolsVersion = 8.1;
 						DevelopmentTeam = GU23RALJBB;
+						LastSwiftMigration = 0810;
 						ProvisioningStyle = Automatic;
 					};
 				};
@@ -132,6 +136,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				509104D61DF69C7100BE44F0 /* TrueScale.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -240,6 +245,7 @@
 		5074047F1DF5B2B000C7E719 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_IDENTITY = "";
 				DEFINES_MODULE = YES;
 				DEVELOPMENT_TEAM = GU23RALJBB;
@@ -253,6 +259,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.hokazono.TrueScale;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 3.0;
 			};
 			name = Debug;
@@ -260,6 +267,7 @@
 		507404801DF5B2B000C7E719 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_IDENTITY = "";
 				DEFINES_MODULE = YES;
 				DEVELOPMENT_TEAM = GU23RALJBB;

@@ -184,7 +184,7 @@ public struct TSScale {
     
 }
 
-extension CGFloat{
+public extension CGFloat{
     public func toPoint(unit:TSUnit)->CGFloat{
         return TSScale().toPoint(value: self, unit: unit)
     }

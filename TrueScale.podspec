@@ -1,6 +1,6 @@
 Pod::Spec.new do |s|
   s.name         = "TrueScale"
-  s.version      = "v0.6"
+  s.version      = "1.0.0"
   s.summary      = "Make CGRect, CGSize, CGPoint from [mm], [cm] and [inch]."
   s.homepage     = "https://github.com/ReoHokazono/TrueScale"
   s.license      = { :type => "MIT", :file => "LICENSE" }

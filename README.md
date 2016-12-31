@@ -53,6 +53,11 @@ iOS Simulator, watchOS, tvOS and macOS is not supported.
 github "ReoHokazono/TrueScale"
 ```
 
+### CocoaPods
+```
+pod 'TrueScale'
+```
+
 ### Manually
 Add `TrueScale.Swift` for your project.
 

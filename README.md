@@ -8,7 +8,7 @@ TrueScale make CGRect, CGsize, CGPoint from Real Units.
 
 ## Example of Use
 ### PastaKit 
-PastaKit is a App for cooking pasta. TrueScale is used for Pasta Measurer.
+PastaKit is a App for cooking pasta. TrueScale is used for Pasta Measurer.  
 AppStore:[PastaKit](https://itunes.apple.com/jp/app/pastakit/id1190027423?ls=1&mt=8)
 
 ### Demo App

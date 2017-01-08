@@ -5,6 +5,15 @@ TrueScale make CGRect, CGsize, CGPoint from Real Units.
 ## Features
 - Make CGRect, CGsize, CGPoint from [mm], [cm] and [inch].
 
+
+## Example of Use
+### PastaKit 
+PastaKit is a App for cooking pasta. TrueScale is used for Pasta Measurer.
+AppStore:[PastaKit](https://itunes.apple.com/jp/app/pastakit/id1190027423?ls=1&mt=8)
+
+### Demo App
+Simple Demo:[Demo](https://github.com/ReoHokazono/TrueScale/tree/master/Demo)
+
 ## How to Use
 
 ### CGRect from [mm]
